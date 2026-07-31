@@ -1,75 +1,86 @@
 # FORMALAB PRO
 
-Production frontend for a premium custom furniture and architectural millwork studio. The site presents private interiors, HoReCa, retail fixtures, engineering process, materials, project cases and a client brief.
+Production frontend for a custom furniture and architectural millwork studio.
+
+[Live product](https://formalabpro.tech/) ·
+[Source repository](https://github.com/Tonivecher/FORMALABPRO)
+
+![FORMALAB PRO production interface](assets/formalab.png)
+
+## Why it exists
+
+Complex custom furniture needs more than a gallery. The product presents
+finished work, materials, engineering process and project constraints, then
+turns that context into a structured client brief.
+
+## Product proof
+
+- Production interface for desktop and mobile.
+- Project gallery with category filtering and detailed case views.
+- Dark and light visual modes built as separate component families.
+- Client-side project brief validation and prefilled email handoff.
+- SEO metadata, Open Graph data, sitemap, robots rules and JSON-LD.
+- Reduced-motion and keyboard-accessible interaction paths.
+
+## How it works
+
+```mermaid
+flowchart LR
+  A["Structured content"] --> B["React component system"]
+  B --> C["Two visual modes"]
+  B --> D["Gallery and case views"]
+  B --> E["Validated project brief"]
+  C --> F["Production build"]
+  D --> F
+  E --> G["Prefilled email handoff"]
+```
+
+The application is intentionally frontend-only. Content lives in typed data
+modules, shared behavior lives in hooks and utilities, and the two visual modes
+reuse the same product information without forcing one component template.
 
 ## Stack
 
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS
+- React 19 and TypeScript
+- Vite and Tailwind CSS
 - Framer Motion
 - Lenis smooth scrolling
+- ESLint and TypeScript build checks
 
-## Features
-
-- Responsive single-page site for desktop and mobile.
-- Two visual modes with a client-facing theme switcher.
-- SEO metadata, Open Graph tags and JSON-LD markup.
-- Project gallery with category filtering and detailed case views.
-- Engineering, materials, process, trust, FAQ and contact brief sections.
-- Client-side validation for the project brief.
-- Root-path production build for Timeweb Cloud.
-
-## Development
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Local URL:
-
-```text
-http://127.0.0.1:5173/
-```
-
-## Quality Checks
+Production build:
 
 ```bash
 npm run lint
 npm run build
-npm run preview
 ```
 
-For production domains where the site is served from `/`:
+## Verification snapshot
 
-```bash
-VITE_BASE_PATH=/ npm run build
-```
+Verified from an isolated source checkout on 31 July 2026:
 
-## Project Structure
+- `npm run lint` — passed
+- `npm run build` — passed
+- live production endpoint — HTTP 200
 
-```text
-src/
-  components/       page sections and shared UI
-  components/v2/    alternative light visual mode
-  data/             site copy and structured section data
-  hooks/            browser and interaction hooks
-  lib/              shared utilities
-  types/            TypeScript contracts
-public/
-  gallery/          gallery images
-  projects/         project case images
-  images/           additional visual assets
-```
+This repository does not claim a backend, CRM integration or automated product
+test suite.
 
-## Deployment
+## Role
 
-Production is deployed from the `main` branch to the existing Timeweb Cloud app.
+Product framing, frontend architecture, interaction design, responsive
+implementation, content structure, production build and deployment handoff.
 
-Production URL:
+## Usage
 
-```text
-https://formalabpro.tech/
-```
+Source code and original project materials are presented for portfolio review.
+No open-source license is granted by this README. Third-party and client media
+remain subject to their respective rights.
+
+[Rights and permitted use](RIGHTS.md)
